@@ -25,6 +25,17 @@ public class BinaryGapTest {
     @Test
     public void decimalToBinary() {
         List<Integer> binary = Arrays.asList(1, 0, 0, 1);
+        List<Integer> binary2 = Arrays.asList(1, 0, 0, 1, 0, 0, 0);
+        List<Integer> binary3 = Arrays.asList(1, 0, 0, 1, 0, 0, 0, 1);
         assertThat(BinaryGap.decToBin(9), is(binary));
+        assertThat(BinaryGap.decToBin(72), is(binary2));
+        assertThat(BinaryGap.decToBin(145), is(binary3));
+    }
+
+    @Test
+    public void findGap() {
+        assertThat(BinaryGap.findGap(9), is(2));
+        assertThat(BinaryGap.findGap(72), is(2));
+        assertThat(BinaryGap.findGap(145), is(3));
     }
 }
